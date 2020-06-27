@@ -1,8 +1,42 @@
+@import 'bootstrap/dist/css/bootstrap';
+
 .navbar {
     background-color:#33475d !important;
-    color: whitesmoke;
+    // color: whitesmoke;
 }
-.navbar-brand{
+.nav-link{
+    color: whitesmoke !important;
+}
+#logo {
+    float: left;
+    font-size: 25px;
     color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+     
+}
+#home-container{
+    margin-top: 25px;
+}
+.jumbotron{
+    background-image: asset-url('background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+    opacity: 1;
+
+}
+html,
+body {
+  height: 100%;
+
+}
+#page_content {
+  flex: 1 0 auto;
 }
 
+#sticky_footer{
+  flex-shrink: none;
+}
