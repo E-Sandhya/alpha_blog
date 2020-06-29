@@ -20,7 +20,7 @@
     margin-top: 25px;
 }
 .jumbotron{
-    background-image: asset-url('background.jpg');
+    background-image: asset-url('bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,6 +35,7 @@ body {
 }
 #page_content {
   flex: 1 0 auto;
+  background-color: lightgray;
 }
 
 #sticky_footer{
