@@ -58,3 +58,29 @@ body {
 .bg1{
   // background-color: lightpink;
 }
+.profileImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #114b67;
+  font-size: 45px;
+  color: #fff;
+  text-align: center;
+  line-height: 180px;
+  margin: auto;
+}
+.profileImage1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #114b67;
+  font-size: 45px;
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+  margin: auto;
+  text-decoration: none;
+}
+.div_a a:link{
+  text-decoration: none;
+}
