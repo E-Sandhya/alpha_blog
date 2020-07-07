@@ -1,6 +1,7 @@
 <h1 class="text-center text-white mt-4 mb-4"><%= @user.username %>'s profile</h1>
 
 <%= gravatar_for @user, size: 250 %>
+<%# <div class = "gravatar" style = "background:transparent url(<%= gravatar_image_url(user.email, :gravatar => { :default => 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png'}) ) 0px 0px no-repeat; width:100px; height:100px;"></div> %>
 <%#= gravatar_image_tag('sandhyajanu409@gmail.com', :alt => 'user.username')%>
 <div class="profileImage">
   <%= users_profile @user %> 
