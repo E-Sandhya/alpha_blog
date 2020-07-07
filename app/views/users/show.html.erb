@@ -1,6 +1,7 @@
 <h1 class="text-center text-white mt-4 mb-4"><%= @user.username %>'s profile</h1>
 
-<%#= gravatar_for @user, size: 250 %>
+<%= gravatar_for @user, size: 250 %>
+<%#= gravatar_image_tag('sandhyajanu409@gmail.com', :alt => 'user.username')%>
 <div class="profileImage">
   <%= users_profile @user %> 
 </div>
