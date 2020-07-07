@@ -1,22 +1,26 @@
 module ApplicationHelper
 
-  
-  def gravatar_for(user, options = { size: 80 })
-    email_address= user.email.downcase
-    hash = Digest::MD5.hexdigest(email_address)
-    # image_ur= GravatarImagrTag::gravatar_url(email_address)
-    size = options[:size]
-    default_url = "/app/assets/images/wb.jpg"
-    gravatar_url = "https://www.gravatar.com/avatar/#{hash}?s=#{size}?d=#{CGI::escape(default_url)}"
-    # image_tag(GravatarImageTag::gravatar_url( :gravatar =>{ :default => 'assets/images/wb.jpg'} ))
-    image_tag(gravatar_url, alt: user.username, class: "rounded-circle shadow mx-auto d-block")
-  end
-  
   def users_profile(user)
   
-    user.username.itself[0,1].to_s.upcase + user.username.match(/(?<=\s)./).to_s.upcase
+    user_path = user.username.itself[0,1].to_s.upcase + user.username.match(/(?<=\s)./).to_s.upcase
 
 
   end
 
+
+  
+  
+  def gravatar_for(user,options = { size: 80 })
+    # byebug
+    default_url = "https://i.pinimg.com/originals/89/ed/c2/89edc2890c3d14a4ed3bbaab9be06a28.gif"
+    user_path = user.username.itself[0,1].to_s.upcase + user.username.match(/(?<=\s)./).to_s.upcase
+
+    gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+    gravatar_url= "http://gravatar.com/avatar/#{gravatar_id}.png?s=180&d=#{CGI.escape(default_url)}"
+    image_tag(gravatar_url, alt:user_path, class: "bg1 rounded-circle shadow mx-auto d-block")
+    
+    
+  
+  end
+  
 end

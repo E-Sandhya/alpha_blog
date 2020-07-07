@@ -4,7 +4,7 @@
   <% @users.each do |user|%>
     <div class="row justify-content-md-center">
       <div class="col-10 mt-4">
-        <div class="card text-center shadow bg1 rounded ml-5 mr-5">
+        <div class="card text-center shadow rounded ml-5 mr-5">
           <div class="card-header font-italic">
             <%= link_to user.username, user %>
           </div>
@@ -12,7 +12,8 @@
             <h5 class="card-title">
             
             <%= link_to user, :action => 'go' do%>
-              <div class="profileImage1"><%= users_profile(user) %></div>
+              <div><%= gravatar_for(user) %></div>
+              
             <% end %>
             
             </h5>
