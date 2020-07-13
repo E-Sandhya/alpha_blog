@@ -112,7 +112,7 @@ body {
   background-size: cover;
 }
 .users-bg{
-  background-image: asset-url('create.jpeg');
+  background-image: asset-url('net.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -168,7 +168,16 @@ body {
   background-color: #cec1ef24;
   border: 2px solid;
   border-color: #8fced6;
+  box-shadow: 0px 0px 0px rgb(97, 165, 162);
+  -webkit-transition:  box-shadow .6s ease-out;
+     box-shadow: .8px .9px 3px rgb(97, 165, 162);
+
 }
+.card-2:hover{
+  box-shadow: 1px 8px 20px rgb(156, 242, 245);
+  -webkit-transition:  box-shadow .6s ease-in;
+}
+
 
 .edit-bg{
   background-image: asset-url('key.jpeg');
