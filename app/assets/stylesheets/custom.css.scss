@@ -57,7 +57,7 @@ body {
   flex-shrink: none;
 }
 .bg{
-    height: 450px;
+    // height: 450px;
     background-image: asset-url('sp.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -231,4 +231,7 @@ body {
 }
 .flickr_pagination .next_page {
   margin-left: 1em; 
+}
+.login-bg{
+
 }
