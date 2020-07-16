@@ -202,7 +202,7 @@ body {
   padding: 0.2em 0.5em; 
 }
 .flickr_pagination .disabled {
-  color: #aaaaaa; 
+  color: #000000; 
 }
 .flickr_pagination .current {
   font-style: normal;
@@ -234,4 +234,15 @@ body {
 }
 .login-bg{
 
+}
+.flash-msg{
+  position: absolute;
+  top: 60px;
+  width: 1090px;
+}
+
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
 }
