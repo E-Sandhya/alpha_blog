@@ -9,14 +9,51 @@
 <%# <div class="profileImage"> %>
   <%= gravatar_for @user %>
 <%# </div> %>
-<div class="text-center mt-4">
-  <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info"%>
-</div>
+<% if logged_in? && @user == current_user%>
+  <div class="text-center mt-4">
+    <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info"%>
+  </div>
+<% end %>
 
 <%# <%= image_tag gravatar_for(@user), class: "rounded-circle shadow mx-auto d-block" %>
 
 <h3 class="text-center text-white mt-4 mb-4">Articles</h3>
-<%= render 'articles/article'%>
+
+<div class="container">
+  <% @articles.each do |article|%>
+    <div class="row justify-content-md-center">
+      <div class="col-10 mt-4">
+        <div class="card text-center text-white usr-art bg2 ml-4 mr-4 rounded">
+          <div class="card-header font-weight-bold  font-italic">
+            <% if article.user %>
+            
+            by <%= link_to article.user.username, user_path(article.user) %>
+            <% end %>
+          </div>
+          <div class="card-body text-white">
+            <h5 class="card-title"><%= link_to article.title, article_path(article), class: " font-weight-bold text-info"%></h5>
+            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <%# <a href="#" class="btn btn-outline-success">View</a>
+            <a href="#" class="btn btn-outline-info">Edit</a>
+            <a href="#" class="btn btn-outline-danger">Delete</a> %>
+            <%= link_to 'View', article_path(article), class: "btn btn-outline-success"%>
+            <% if logged_in? && article.user == current_user%>
+              <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info"%>
+              <%= link_to 'Delete',  article_path(article), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-outline-danger"%>
+            <% end %>
+          </div>
+
+          <div class="card-footer mb-4 text-white text-muted">
+            <small> created <%= time_ago_in_words(article.created_at) %> ago,
+            Edited <%= time_ago_in_words(article.updated_at)%> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
  <div class="flickr_pagination mt-4 mb-4">
     <%= will_paginate @articles, :container => false %>
   </div>
