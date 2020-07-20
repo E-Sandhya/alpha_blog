@@ -7,7 +7,7 @@
     </button>
                 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto ">
         
         <li class="nav-item">
           <%# <a class="nav-link" href="#">Link</a> %>
@@ -23,8 +23,6 @@
             <% end %>
             <%= link_to "View articles", articles_path, class: "dropdown-item"%>
 
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
         
@@ -32,15 +30,16 @@
         <% if logged_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.username %>
+            <%= "Admin" if current_user.admin? %> <%= current_user.username %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       
               <%= link_to "View profile", user_path(current_user), class: "dropdown-item"%>
               <%= link_to "Edit your profile", edit_user_path(current_user), class: "dropdown-item"%>
-
+               <%= link_to 'Log out', logout_path, class: "dropdown-item", method: :delete%>
               <div class="dropdown-divider"></div>
-              <%= link_to 'Log out', logout_path, class: "dropdown-item", method: :delete%>
+              <%= link_to "Delete profile",user_path(current_user),class: "dropdown-item text-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+             
              
             </div>
         </li>
