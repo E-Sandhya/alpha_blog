@@ -34,7 +34,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 425px;
+    height: 500px;
     opacity: 1;
 
 }
@@ -255,4 +255,8 @@ form input[type=text]:invalid {
   background-color: #17181947 ;
   box-shadow: 1px 8px 20px #fff;
   -webkit-transition:  box-shadow .6s ease-in;
+}
+.alert-alert{
+  color: #197692;
+  background-color: #d3f0f9;
 }
