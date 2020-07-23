@@ -43,7 +43,8 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
-  config.gem 'gravatar_imagr_tag'
+  # config.gem 'gravatar_imagr_tag'
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
 end
