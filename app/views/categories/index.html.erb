@@ -1,14 +1,17 @@
-<h1 class="text-center text-dark style="margin-top: 60px;">Categories</h1>
+<div class="category-bg">
+
+<h1 class="text-center text-white style="margin-top: 60px;">Categories</h1>
 
 
 <div class="container">
   <% @categories.each do |category|%>
     <div class="row justify-content-md-center">
-      <div class="col-10 mt-4">
-        <div class="card text-center card-1 text-white bg2 ml-4 mr-4 rounded">
+      <div class="col-8 mt-4">
+        <div class=" card text-center card-1 text-white bg2 mr-4 rounded">
           
           <div class="card-body text-white">
             <h5 class="card-title"><%= link_to category.name, category_path(category), class: " font-weight-bold text-info"%></h5> 
+            <p class="card-text text-light"><%= pluralize(category.articles.count, "article") %></p>
           </div>
 
           <div class="card-footer mb-4 text-white text-muted">
@@ -23,4 +26,5 @@
 
 <div class="flickr_pagination mt-4 mb-4">
     <%= will_paginate @categories, :container => false %>
+</div>
 </div>
