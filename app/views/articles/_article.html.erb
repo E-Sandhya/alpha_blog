@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container cont mb-4">
   <% @articles.each do |article|%>
     <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
+      <div class="col-8 mt-3 mb-4">
         <div class="card text-center card-1 text-white bg2 ml-4 mr-4 rounded">
           <div class="card-header font-weight-bold  font-italic">
             <% if article.user %>
@@ -35,4 +35,5 @@
       </div>
     </div>
   <% end %>
+
 </div>
